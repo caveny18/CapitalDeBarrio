@@ -331,84 +331,194 @@
       margin-top:24px;
     }
 
-    /* ROUTES */
+/* ========================= */
+/* NUEVAS RUTAS HUMANAS */
+/* ========================= */
 
-    .section{
-      padding:90px 0;
-    }
+.human-routes{
+  background:#fff;
+}
 
-    .section-title{
-      text-align:center;
-      margin-bottom:60px;
-    }
+.mini-tag{
+  display:inline-block;
+  background:#eef4ff;
+  color:var(--blue);
+  padding:10px 18px;
+  border-radius:100px;
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:22px;
+}
 
-    .section-title h2{
-      font-size:54px;
-      color:var(--dark);
-      margin-bottom:16px;
-    }
+.human-routes-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
 
-    .section-title p{
-      color:var(--gray);
-      font-size:18px;
-      max-width:720px;
-      margin:auto;
-      line-height:1.8;
-    }
+.human-route-card{
+  background:white;
+  border-radius:34px;
+  overflow:hidden;
+  box-shadow:0 20px 45px rgba(0,0,0,.06);
+  transition:.35s;
+}
 
-    .routes-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:26px;
-    }
+.human-route-card:hover{
+  transform:translateY(-10px);
+}
 
-    .route-card{
-      background:white;
-      border-radius:30px;
-      overflow:hidden;
-      box-shadow:0 20px 40px rgba(0,0,0,.05);
-      transition:.35s;
-    }
+.human-image{
+  position:relative;
+}
 
-    .route-card:hover{
-      transform:translateY(-10px);
-    }
+.human-image img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
 
-    .route-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-    }
+.human-badge{
+  position:absolute;
+  left:20px;
+  bottom:20px;
+  padding:12px 18px;
+  border-radius:100px;
+  color:white;
+  font-weight:700;
+  font-size:14px;
+  backdrop-filter:blur(10px);
+}
 
-    .route-content{
-      padding:26px;
-    }
+.green-badge{
+  background:rgba(46,125,50,.95);
+}
 
-    .route-icon{
-      width:58px;
-      height:58px;
-      border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:18px;
-      color:white;
-      font-size:24px;
-      font-weight:700;
-    }
+.yellow-badge{
+  background:rgba(245,180,0,.95);
+}
 
-    .route-content h3{
-      margin-bottom:14px;
-      font-size:24px;
-      color:var(--dark);
-    }
+.coral-badge{
+  background:rgba(255,107,107,.95);
+}
 
-    .route-content p{
-      color:var(--gray);
-      line-height:1.7;
-      margin-bottom:24px;
-      font-size:15px;
-    }
+.blue-badge{
+  background:rgba(21,101,192,.95);
+}
+
+.human-content{
+  padding:32px;
+}
+
+.human-content h3{
+  font-size:30px;
+  margin-bottom:18px;
+  color:var(--dark);
+}
+
+.human-content p{
+  color:var(--gray);
+  line-height:1.8;
+  margin-bottom:24px;
+}
+
+.learn-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-bottom:28px;
+}
+
+.learn-list span{
+  background:#f7f9fc;
+  padding:14px 16px;
+  border-radius:16px;
+  color:var(--text);
+  font-size:14px;
+}
+
+/* ========================= */
+/* OPORTUNIDADES */
+/* ========================= */
+
+.opportunities-section{
+  background:var(--light);
+}
+
+.opportunities-box{
+  background:linear-gradient(135deg,#08111f,#10243c);
+  border-radius:40px;
+  padding:80px 50px;
+  overflow:hidden;
+  position:relative;
+}
+
+.light-title h2{
+  color:white;
+}
+
+.light-title p{
+  color:#c8d4e1;
+}
+
+.dark-mini{
+  background:rgba(255,255,255,.08);
+  color:white;
+}
+
+.opportunities-grid{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+}
+
+.op-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:28px;
+  padding:34px 28px;
+  backdrop-filter:blur(12px);
+}
+
+.op-number{
+  width:64px;
+  height:64px;
+  border-radius:20px;
+  background:var(--yellow);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  font-family:'Montserrat';
+  font-weight:800;
+  margin-bottom:24px;
+}
+
+.op-card h3{
+  color:white;
+  font-size:24px;
+  margin-bottom:16px;
+}
+
+.op-card p{
+  color:#d3dce7;
+  line-height:1.8;
+  font-size:15px;
+}
+
+@media(max-width:768px){
+
+  .human-content h3{
+    font-size:24px;
+  }
+
+  .opportunities-box{
+    padding:50px 24px;
+  }
+
+}
 
     /* GAMIFICATION */
 
@@ -938,101 +1048,183 @@
 
   </section>
 
-  <!-- RUTAS -->
+ <!-- ========================= -->
+<!-- NUEVA SECCIÓN RUTAS HUMANAS -->
+<!-- REEMPLAZA TU SECTION "RUTAS" -->
+<!-- ========================= -->
 
-  <section class="section">
+<section class="section human-routes">
 
-    <div class="container">
+  <div class="container">
 
-      <div class="section-title">
+    <div class="section-title">
 
-        <h2>¿Qué quieres lograr hoy?</h2>
+      <span class="mini-tag">
+        Hecho para emprendedores reales
+      </span>
 
-        <p>
-          Elige una ruta y aprende paso a paso con contenido fácil, humano y pensado para emprendedores reales.
-        </p>
+      <h2>¿Cuál se parece más a ti?</h2>
+
+      <p>
+        Cada ruta fue creada pensando en personas reales del Perú.
+        Aprende con ejemplos simples, herramientas útiles y contenido pensado para tu día a día.
+      </p>
+
+    </div>
+
+    <div class="human-routes-grid">
+
+      <!-- CARD 1 -->
+
+      <div class="human-route-card">
+
+        <div class="human-image">
+
+          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="Negocio de comida">
+
+          <div class="human-badge green-badge">
+            🍲 Negocios de comida
+          </div>
+
+        </div>
+
+        <div class="human-content">
+
+          <h3>Negocios que alimentan familias</h3>
+
+          <p>
+            Para personas que venden comida, desayuno, menú o trabajan cada día para que su negocio siga creciendo.
+          </p>
+
+          <div class="learn-list">
+
+            <span>✔ Cómo vender más</span>
+            <span>✔ Cómo evitar pérdidas</span>
+            <span>✔ Cómo organizar ganancias</span>
+            <span>✔ Cómo ahorrar poco a poco</span>
+
+          </div>
+
+          <button class="btn btn-primary">
+            Ver ruta
+          </button>
+
+        </div>
 
       </div>
 
-      <div class="routes-grid">
+      <!-- CARD 2 -->
 
-        <div class="route-card">
+      <div class="human-route-card">
 
-          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop">
+        <div class="human-image">
 
-          <div class="route-content">
+          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="Ventas">
 
-            <div class="route-icon green">↗</div>
-
-            <h3>Quiero vender más</h3>
-
-            <p>
-              Aprende a atraer clientes y mejorar tus ventas sin complicarte.
-            </p>
-
-            <button class="btn btn-primary">Ver ruta</button>
-
+          <div class="human-badge yellow-badge">
+            🛍️ Ventas diarias
           </div>
 
         </div>
 
-        <div class="route-card">
+        <div class="human-content">
 
-          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop">
+          <h3>Emprendedores que venden todos los días</h3>
 
-          <div class="route-content">
+          <p>
+            Para vendedores ambulantes, pequeños comercios y negocios que quieren crecer con más orden.
+          </p>
 
-            <div class="route-icon yellow">$</div>
+          <div class="learn-list">
 
-            <h3>Ordenar mi dinero</h3>
+            <span>✔ Cómo atraer clientes</span>
+            <span>✔ Cómo usar WhatsApp</span>
+            <span>✔ Cómo poner precios</span>
+            <span>✔ Cómo mejorar ventas</span>
 
-            <p>
-              Aprende a controlar tus gastos y dejar de quedarte sin plata.
-            </p>
+          </div>
 
-            <button class="btn btn-primary">Ver ruta</button>
+          <button class="btn btn-primary">
+            Ver ruta
+          </button>
 
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="human-route-card">
+
+        <div class="human-image">
+
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="Mujeres emprendedoras">
+
+          <div class="human-badge coral-badge">
+            👩‍👧 Mujeres emprendedoras
           </div>
 
         </div>
 
-        <div class="route-card">
+        <div class="human-content">
 
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop">
+          <h3>Mujeres que construyen futuro</h3>
 
-          <div class="route-content">
+          <p>
+            Herramientas simples para mujeres emprendedoras que quieren hacer crecer su hogar y su negocio.
+          </p>
 
-            <div class="route-icon coral">♥</div>
+          <div class="learn-list">
 
-            <h3>Ahorrar e invertir</h3>
+            <span>✔ Organización del tiempo</span>
+            <span>✔ Ventas digitales</span>
+            <span>✔ Ahorro simple</span>
+            <span>✔ Crecimiento personal</span>
 
-            <p>
-              Empieza a construir estabilidad poco a poco y sin miedo.
-            </p>
+          </div>
 
-            <button class="btn btn-primary">Ver ruta</button>
+          <button class="btn btn-primary">
+            Ver ruta
+          </button>
 
+        </div>
+
+      </div>
+
+      <!-- CARD 4 -->
+
+      <div class="human-route-card">
+
+        <div class="human-image">
+
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop" alt="Negocios familiares">
+
+          <div class="human-badge blue-badge">
+            🛠️ Negocios familiares
           </div>
 
         </div>
 
-        <div class="route-card">
+        <div class="human-content">
 
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+          <h3>Negocios que empezaron con esfuerzo</h3>
 
-          <div class="route-content">
+          <p>
+            Para talleres, técnicos y negocios familiares que quieren dar el siguiente paso.
+          </p>
 
-            <div class="route-icon blue">👥</div>
+          <div class="learn-list">
 
-            <h3>Crecer con mi equipo</h3>
-
-            <p>
-              Organiza tareas y mejora el trabajo de tu negocio familiar.
-            </p>
-
-            <button class="btn btn-primary">Ver ruta</button>
+            <span>✔ Organización del negocio</span>
+            <span>✔ Atención al cliente</span>
+            <span>✔ Trabajo en equipo</span>
+            <span>✔ Crecimiento responsable</span>
 
           </div>
+
+          <button class="btn btn-primary">
+            Ver ruta
+          </button>
 
         </div>
 
@@ -1040,7 +1232,109 @@
 
     </div>
 
-  </section>
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- NUEVA SECCIÓN OPORTUNIDADES -->
+<!-- AGREGAR DEBAJO DE GAMIFICATION -->
+<!-- ========================= -->
+
+<section class="section opportunities-section">
+
+  <div class="container">
+
+    <div class="opportunities-box">
+
+      <div class="section-title light-title">
+
+        <span class="mini-tag dark-mini">
+          Tu progreso importa
+        </span>
+
+        <h2>Tu avance abre nuevas oportunidades</h2>
+
+        <p>
+          Capital de Barrio no solo te ayuda a aprender.
+          Te acompaña en tu crecimiento para prepararte para nuevas oportunidades.
+        </p>
+
+      </div>
+
+      <div class="opportunities-grid">
+
+        <!-- STEP -->
+
+        <div class="op-card">
+
+          <div class="op-number">
+            1
+          </div>
+
+          <h3>Aprende paso a paso</h3>
+
+          <p>
+            Videos simples y herramientas prácticas para tu negocio y tu día a día.
+          </p>
+
+        </div>
+
+        <!-- STEP -->
+
+        <div class="op-card">
+
+          <div class="op-number">
+            2
+          </div>
+
+          <h3>Participa en talleres</h3>
+
+          <p>
+            Conoce otros emprendedores y sigue creciendo acompañado.
+          </p>
+
+        </div>
+
+        <!-- STEP -->
+
+        <div class="op-card">
+
+          <div class="op-number">
+            3
+          </div>
+
+          <h3>Construye tu progreso</h3>
+
+          <p>
+            Tu constancia y avance desbloquean nuevas herramientas y beneficios.
+          </p>
+
+        </div>
+
+        <!-- STEP -->
+
+        <div class="op-card">
+
+          <div class="op-number">
+            4
+          </div>
+
+          <h3>Prepárate para crecer más</h3>
+
+          <p>
+            A medida que avances podrás prepararte para futuras oportunidades de financiamiento.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- GAMIFICATION -->
 
