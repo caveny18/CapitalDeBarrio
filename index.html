@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Capital de Barrio</title>
 
-  <!-- Google Fonts -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&family=Caveat+Brush&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600&family=Caveat+Brush&display=swap" rel="stylesheet">
 
   <style>
 
@@ -20,15 +20,15 @@
     }
 
     :root{
-      --dark:#0D1B2A;
-      --blue:#1565C0;
+      --dark:#081528;
+      --blue:#0E3A78;
       --yellow:#F5B400;
       --green:#2E7D32;
       --coral:#FF6B6B;
-      --light:#F7F7FA;
+      --light:#F5F7FB;
       --white:#ffffff;
       --text:#233040;
-      --gray:#697586;
+      --gray:#6B7280;
     }
 
     html{
@@ -36,19 +36,24 @@
     }
 
     body{
-      font-family:'Poppins', sans-serif;
+      font-family:'Poppins',sans-serif;
       background:var(--light);
       color:var(--text);
       overflow-x:hidden;
     }
 
     h1,h2,h3,h4,h5{
-      font-family:'Montserrat', sans-serif;
-      line-height:1.1;
+      font-family:'Montserrat',sans-serif;
+      line-height:1.05;
     }
 
     a{
       text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
     }
 
     .container{
@@ -56,14 +61,41 @@
       margin:auto;
     }
 
+    .section{
+      padding:110px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title h2{
+      font-size:58px;
+      color:var(--dark);
+      margin-bottom:22px;
+      letter-spacing:-1px;
+    }
+
+    .section-title p{
+      max-width:760px;
+      margin:auto;
+      color:var(--gray);
+      line-height:1.9;
+      font-size:18px;
+    }
+
+    /* ========================= */
     /* NAVBAR */
+    /* ========================= */
 
     .navbar{
       position:sticky;
       top:0;
       z-index:999;
-      background:white;
-      box-shadow:0 4px 20px rgba(0,0,0,.05);
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(10px);
+      box-shadow:0 6px 24px rgba(0,0,0,.05);
       padding:18px 0;
     }
 
@@ -77,50 +109,33 @@
     .logo{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:16px;
     }
 
-    .logo-circle{
-      width:52px;
-      height:52px;
-      border-radius:18px;
-      background:linear-gradient(135deg,var(--dark),var(--blue));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:white;
-      font-size:24px;
-      font-weight:bold;
-    }
+    /* ========================= */
+    /* REEMPLAZA TU LOGO AQUÍ */
+    /* ========================= */
 
-    .logo-text{
-      display:flex;
-      flex-direction:column;
-      line-height:1;
-    }
-
-    .logo-text strong{
-      font-family:'Montserrat';
-      font-size:22px;
-      color:var(--dark);
-    }
-
-    .logo-text span{
-      color:var(--yellow);
-      font-weight:700;
-      font-size:18px;
+    .logo img{
+      width:200px;
+      object-fit:contain;
     }
 
     .nav-links{
       display:flex;
-      gap:28px;
       align-items:center;
+      gap:28px;
     }
 
     .nav-links a{
       color:var(--dark);
       font-weight:500;
       font-size:15px;
+      transition:.3s;
+    }
+
+    .nav-links a:hover{
+      color:var(--yellow);
     }
 
     .nav-actions{
@@ -131,43 +146,45 @@
 
     .btn{
       border:none;
-      border-radius:16px;
-      padding:14px 22px;
+      border-radius:18px;
+      padding:15px 24px;
       cursor:pointer;
       font-family:'Montserrat';
-      font-weight:700;
+      font-weight:800;
       transition:.3s;
       font-size:14px;
-    }
-
-    .btn-outline{
-      background:white;
-      border:1px solid #dfe3ea;
-      color:var(--dark);
     }
 
     .btn-primary{
       background:var(--yellow);
       color:white;
-      box-shadow:0 10px 20px rgba(245,180,0,.25);
+      box-shadow:0 10px 24px rgba(245,180,0,.28);
     }
 
     .btn-primary:hover{
-      transform:translateY(-2px);
+      transform:translateY(-3px);
     }
 
+    .btn-outline{
+      background:white;
+      border:1px solid #e3e8f0;
+      color:var(--dark);
+    }
+
+    /* ========================= */
     /* HERO */
+    /* ========================= */
 
     .hero{
-      padding:80px 0 40px;
       position:relative;
       overflow:hidden;
+      padding:90px 0 70px;
     }
 
     .hero-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:60px;
+      gap:70px;
       align-items:center;
     }
 
@@ -177,25 +194,26 @@
       gap:10px;
       background:white;
       border-radius:100px;
-      padding:10px 18px;
-      box-shadow:0 8px 30px rgba(0,0,0,.06);
-      margin-bottom:28px;
+      padding:12px 20px;
+      box-shadow:0 10px 30px rgba(0,0,0,.05);
+      margin-bottom:30px;
       font-size:14px;
       color:var(--gray);
+      font-weight:500;
     }
 
     .tag-dot{
       width:10px;
       height:10px;
-      background:var(--green);
       border-radius:50%;
+      background:var(--green);
     }
 
     .hero h1{
-      font-size:72px;
+      font-size:82px;
       color:var(--dark);
-      margin-bottom:24px;
-      letter-spacing:-2px;
+      margin-bottom:26px;
+      letter-spacing:-3px;
     }
 
     .hero h1 span{
@@ -203,18 +221,18 @@
     }
 
     .hero p{
-      font-size:20px;
+      font-size:21px;
       color:var(--gray);
-      line-height:1.7;
+      line-height:1.8;
       margin-bottom:34px;
-      max-width:580px;
+      max-width:600px;
     }
 
     .hero-actions{
       display:flex;
-      gap:16px;
       flex-wrap:wrap;
-      margin-bottom:36px;
+      gap:16px;
+      margin-bottom:40px;
     }
 
     .hero-badges{
@@ -225,23 +243,23 @@
 
     .badge-card{
       background:white;
-      border-radius:22px;
-      padding:18px;
+      border-radius:24px;
+      padding:20px;
       display:flex;
       align-items:center;
       gap:14px;
-      box-shadow:0 10px 30px rgba(0,0,0,.05);
+      box-shadow:0 15px 35px rgba(0,0,0,.05);
     }
 
     .badge-icon{
-      width:52px;
-      height:52px;
+      width:56px;
+      height:56px;
       border-radius:18px;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:22px;
       color:white;
+      font-size:22px;
       font-weight:bold;
     }
 
@@ -252,12 +270,19 @@
 
     .badge-card h4{
       font-size:15px;
-      margin-bottom:4px;
+      margin-bottom:5px;
     }
 
     .badge-card span{
       color:var(--gray);
       font-size:13px;
+    }
+
+    .handwriting{
+      font-family:'Caveat Brush';
+      font-size:46px;
+      color:var(--coral);
+      margin-top:28px;
     }
 
     .hero-image{
@@ -266,34 +291,35 @@
 
     .hero-image img{
       width:100%;
-      border-radius:36px;
+      height:720px;
       object-fit:cover;
-      box-shadow:0 30px 60px rgba(0,0,0,.12);
+      border-radius:38px;
+      box-shadow:0 30px 70px rgba(0,0,0,.14);
     }
 
     .floating-card{
       position:absolute;
       background:white;
-      border-radius:24px;
-      padding:22px;
-      box-shadow:0 20px 50px rgba(0,0,0,.1);
-      max-width:270px;
+      border-radius:28px;
+      padding:24px;
+      box-shadow:0 20px 60px rgba(0,0,0,.12);
+      max-width:280px;
     }
 
     .floating-top{
-      top:30px;
-      right:-20px;
+      top:40px;
+      right:-30px;
     }
 
     .floating-bottom{
-      left:-20px;
-      bottom:20px;
+      left:-30px;
+      bottom:40px;
     }
 
     .floating-card h3{
+      font-size:22px;
+      margin-bottom:14px;
       color:var(--dark);
-      margin-bottom:12px;
-      font-size:20px;
     }
 
     .floating-card ul{
@@ -304,8 +330,8 @@
     }
 
     .floating-card li{
-      font-size:14px;
       color:var(--gray);
+      font-size:14px;
     }
 
     .progress-circle{
@@ -317,234 +343,145 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      font-family:'Montserrat';
-      font-size:20px;
+      font-size:22px;
       font-weight:800;
       color:var(--dark);
       margin-bottom:14px;
+      font-family:'Montserrat';
     }
 
-    .handwriting{
-      font-family:'Caveat Brush';
-      font-size:42px;
-      color:var(--coral);
-      margin-top:24px;
+    /* ========================= */
+    /* RUTAS */
+    /* ========================= */
+
+    .human-routes{
+      background:white;
     }
 
-/* ========================= */
-/* NUEVAS RUTAS HUMANAS */
-/* ========================= */
+    .mini-tag{
+      display:inline-block;
+      background:#eef4ff;
+      color:var(--blue);
+      padding:10px 18px;
+      border-radius:100px;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:24px;
+    }
 
-.human-routes{
-  background:#fff;
-}
+    .human-routes-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
 
-.mini-tag{
-  display:inline-block;
-  background:#eef4ff;
-  color:var(--blue);
-  padding:10px 18px;
-  border-radius:100px;
-  font-size:14px;
-  font-weight:600;
-  margin-bottom:22px;
-}
+    .human-route-card{
+      background:white;
+      border-radius:34px;
+      overflow:hidden;
+      box-shadow:0 20px 45px rgba(0,0,0,.06);
+      transition:.35s;
+    }
 
-.human-routes-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
-}
+    .human-route-card:hover{
+      transform:translateY(-10px);
+    }
 
-.human-route-card{
-  background:white;
-  border-radius:34px;
-  overflow:hidden;
-  box-shadow:0 20px 45px rgba(0,0,0,.06);
-  transition:.35s;
-}
+    .human-image{
+      position:relative;
+    }
 
-.human-route-card:hover{
-  transform:translateY(-10px);
-}
+    .human-image img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+    }
 
-.human-image{
-  position:relative;
-}
+    .human-badge{
+      position:absolute;
+      left:20px;
+      bottom:20px;
+      padding:12px 18px;
+      border-radius:100px;
+      color:white;
+      font-weight:700;
+      font-size:14px;
+      backdrop-filter:blur(10px);
+    }
 
-.human-image img{
-  width:100%;
-  height:280px;
-  object-fit:cover;
-}
+    .green-badge{
+      background:rgba(46,125,50,.95);
+    }
 
-.human-badge{
-  position:absolute;
-  left:20px;
-  bottom:20px;
-  padding:12px 18px;
-  border-radius:100px;
-  color:white;
-  font-weight:700;
-  font-size:14px;
-  backdrop-filter:blur(10px);
-}
+    .yellow-badge{
+      background:rgba(245,180,0,.95);
+    }
 
-.green-badge{
-  background:rgba(46,125,50,.95);
-}
+    .coral-badge{
+      background:rgba(255,107,107,.95);
+    }
 
-.yellow-badge{
-  background:rgba(245,180,0,.95);
-}
+    .blue-badge{
+      background:rgba(14,58,120,.95);
+    }
 
-.coral-badge{
-  background:rgba(255,107,107,.95);
-}
+    .human-content{
+      padding:34px;
+    }
 
-.blue-badge{
-  background:rgba(21,101,192,.95);
-}
+    .human-content h3{
+      font-size:30px;
+      margin-bottom:18px;
+      color:var(--dark);
+    }
 
-.human-content{
-  padding:32px;
-}
+    .human-content p{
+      color:var(--gray);
+      line-height:1.9;
+      margin-bottom:26px;
+    }
 
-.human-content h3{
-  font-size:30px;
-  margin-bottom:18px;
-  color:var(--dark);
-}
+    .learn-list{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-bottom:28px;
+    }
 
-.human-content p{
-  color:var(--gray);
-  line-height:1.8;
-  margin-bottom:24px;
-}
+    .learn-list span{
+      background:#f7f9fc;
+      padding:14px 16px;
+      border-radius:16px;
+      color:var(--text);
+      font-size:14px;
+    }
 
-.learn-list{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin-bottom:28px;
-}
-
-.learn-list span{
-  background:#f7f9fc;
-  padding:14px 16px;
-  border-radius:16px;
-  color:var(--text);
-  font-size:14px;
-}
-
-/* ========================= */
-/* OPORTUNIDADES */
-/* ========================= */
-
-.opportunities-section{
-  background:var(--light);
-}
-
-.opportunities-box{
-  background:linear-gradient(135deg,#08111f,#10243c);
-  border-radius:40px;
-  padding:80px 50px;
-  overflow:hidden;
-  position:relative;
-}
-
-.light-title h2{
-  color:white;
-}
-
-.light-title p{
-  color:#c8d4e1;
-}
-
-.dark-mini{
-  background:rgba(255,255,255,.08);
-  color:white;
-}
-
-.opportunities-grid{
-  margin-top:60px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:24px;
-}
-
-.op-card{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:28px;
-  padding:34px 28px;
-  backdrop-filter:blur(12px);
-}
-
-.op-number{
-  width:64px;
-  height:64px;
-  border-radius:20px;
-  background:var(--yellow);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
-  font-family:'Montserrat';
-  font-weight:800;
-  margin-bottom:24px;
-}
-
-.op-card h3{
-  color:white;
-  font-size:24px;
-  margin-bottom:16px;
-}
-
-.op-card p{
-  color:#d3dce7;
-  line-height:1.8;
-  font-size:15px;
-}
-
-@media(max-width:768px){
-
-  .human-content h3{
-    font-size:24px;
-  }
-
-  .opportunities-box{
-    padding:50px 24px;
-  }
-
-}
-
+    /* ========================= */
     /* GAMIFICATION */
+    /* ========================= */
 
     .gamification{
       background:linear-gradient(135deg,#07111d,#13283f);
       color:white;
-      border-radius:40px;
-      padding:60px;
-      position:relative;
+      border-radius:44px;
+      padding:70px;
       overflow:hidden;
     }
 
     .game-grid{
       display:grid;
-      grid-template-columns:1fr 400px;
-      gap:50px;
+      grid-template-columns:1fr 420px;
+      gap:60px;
       align-items:center;
     }
 
     .game-left h2{
-      font-size:52px;
+      font-size:58px;
       margin-bottom:24px;
     }
 
     .game-left p{
-      color:#cbd6e3;
+      color:#d0dae5;
       line-height:1.9;
       font-size:18px;
       margin-bottom:40px;
@@ -559,26 +496,26 @@
     .stat-card{
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.08);
-      padding:26px;
+      padding:28px;
       border-radius:24px;
       backdrop-filter:blur(10px);
     }
 
     .stat-card h3{
-      font-size:42px;
-      margin-bottom:8px;
+      font-size:44px;
+      margin-bottom:10px;
       color:var(--yellow);
     }
 
     .stat-card span{
-      color:#d9e2ec;
+      color:#d7e2ed;
       font-size:14px;
     }
 
     .progress-panel{
       background:white;
-      border-radius:30px;
-      padding:32px;
+      border-radius:32px;
+      padding:34px;
       color:var(--dark);
     }
 
@@ -602,13 +539,12 @@
       width:65%;
       height:100%;
       background:linear-gradient(90deg,var(--green),#57c05e);
-      border-radius:100px;
     }
 
     .mini-module{
       background:#f6f8fb;
       border-radius:22px;
-      padding:18px;
+      padding:20px;
       margin-top:24px;
     }
 
@@ -621,7 +557,9 @@
       font-size:20px;
     }
 
-    /* TESTIMONIALS */
+    /* ========================= */
+    /* TESTIMONIOS */
+    /* ========================= */
 
     .testimonial-grid{
       display:grid;
@@ -631,16 +569,16 @@
 
     .testimonial{
       background:white;
-      border-radius:28px;
-      padding:30px;
+      border-radius:30px;
+      padding:34px;
       box-shadow:0 15px 35px rgba(0,0,0,.05);
     }
 
     .quote{
       font-size:22px;
+      line-height:1.7;
+      margin-bottom:28px;
       color:var(--dark);
-      margin-bottom:26px;
-      line-height:1.6;
       font-weight:500;
     }
 
@@ -661,90 +599,54 @@
       color:var(--gray);
     }
 
-    /* MODULES */
+    /* ========================= */
+    /* IMPACTO PEQUEÑO */
+    /* ========================= */
 
-    .modules{
+    .impact-section{
       background:white;
+    }
+
+    .impact-box{
+      background:linear-gradient(135deg,var(--blue),#102b52);
       border-radius:40px;
-      padding:70px;
-    }
-
-    .module-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:24px;
-      margin-top:50px;
-    }
-
-    .module-card{
-      background:#f8f9fc;
-      border-radius:28px;
-      padding:28px;
-      transition:.3s;
-    }
-
-    .module-card:hover{
-      transform:translateY(-8px);
-      background:white;
-      box-shadow:0 15px 35px rgba(0,0,0,.06);
-    }
-
-    .module-card h3{
-      margin:18px 0;
-      font-size:24px;
-      color:var(--dark);
-    }
-
-    .module-card ul{
-      list-style:none;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-
-    .module-card li{
-      color:var(--gray);
-      font-size:15px;
-      line-height:1.5;
-    }
-
-    /* COMMUNITY */
-
-    .community{
-      position:relative;
-    }
-
-    .community-box{
-      background:linear-gradient(135deg,var(--blue),#0f4fa0);
-      border-radius:40px;
-      padding:70px;
+      padding:80px 60px;
       color:white;
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:50px;
+      gap:60px;
       align-items:center;
     }
 
-    .community h2{
+    .impact-box h2{
       font-size:58px;
       margin-bottom:24px;
     }
 
-    .community p{
-      color:#dbe8f5;
+    .impact-box p{
+      color:#dce7f4;
       line-height:1.9;
-      margin-bottom:30px;
       font-size:18px;
+      margin-bottom:30px;
     }
 
-    .community img{
+    .impact-image img{
       width:100%;
-      border-radius:30px;
+      height:480px;
       object-fit:cover;
-      box-shadow:0 25px 50px rgba(0,0,0,.2);
+      border-radius:32px;
+      box-shadow:0 25px 50px rgba(0,0,0,.25);
     }
 
+    .impact-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+    }
+
+    /* ========================= */
     /* CTA */
+    /* ========================= */
 
     .cta{
       padding:120px 0;
@@ -752,27 +654,29 @@
     }
 
     .cta h2{
-      font-size:72px;
+      font-size:74px;
       color:var(--dark);
-      margin-bottom:22px;
+      margin-bottom:24px;
       line-height:1.1;
     }
 
     .cta p{
-      max-width:700px;
+      max-width:760px;
       margin:auto;
       color:var(--gray);
-      line-height:1.8;
-      margin-bottom:36px;
+      line-height:1.9;
       font-size:20px;
+      margin-bottom:38px;
     }
 
+    /* ========================= */
     /* FOOTER */
+    /* ========================= */
 
     footer{
       background:var(--dark);
       color:white;
-      padding:80px 0 40px;
+      padding:90px 0 40px;
     }
 
     .footer-grid{
@@ -782,25 +686,14 @@
       margin-bottom:60px;
     }
 
-    .footer-logo{
+    .footer-logo img{
+      width:220px;
       margin-bottom:24px;
-    }
-
-    .footer-logo strong{
-      display:block;
-      font-family:'Montserrat';
-      font-size:34px;
-    }
-
-    .footer-logo span{
-      color:var(--yellow);
-      font-size:24px;
-      font-weight:700;
     }
 
     footer p{
       color:#c4ced8;
-      line-height:1.8;
+      line-height:1.9;
     }
 
     .footer-column h4{
@@ -822,35 +715,36 @@
       font-size:14px;
     }
 
+    /* ========================= */
     /* RESPONSIVE */
+    /* ========================= */
 
     @media(max-width:980px){
 
       .hero-grid,
       .game-grid,
-      .community-box,
+      .impact-box,
       .footer-grid{
         grid-template-columns:1fr;
       }
 
       .hero h1{
-        font-size:52px;
+        font-size:58px;
       }
 
-      .section-title h2{
-        font-size:42px;
-      }
-
+      .section-title h2,
+      .impact-box h2,
+      .game-left h2,
       .cta h2{
-        font-size:52px;
-      }
-
-      .community h2{
-        font-size:42px;
+        font-size:44px;
       }
 
       .nav-links{
         display:none;
+      }
+
+      .hero-image img{
+        height:520px;
       }
 
       .floating-card{
@@ -859,10 +753,9 @@
         margin-top:20px;
       }
 
-      .modules,
-      .community-box,
-      .gamification{
-        padding:34px;
+      .gamification,
+      .impact-box{
+        padding:40px 28px;
       }
 
     }
@@ -870,31 +763,35 @@
     @media(max-width:640px){
 
       .hero{
-        padding-top:50px;
+        padding-top:60px;
       }
 
       .hero h1{
-        font-size:42px;
+        font-size:44px;
       }
 
       .hero p{
         font-size:17px;
       }
 
-      .hero-badges{
+      .hero-badges,
+      .stats{
         grid-template-columns:1fr;
       }
 
-      .section-title h2{
+      .section-title h2,
+      .impact-box h2,
+      .game-left h2,
+      .cta h2{
         font-size:36px;
       }
 
-      .cta h2{
-        font-size:42px;
+      .impact-image img{
+        height:320px;
       }
 
-      .stats{
-        grid-template-columns:1fr;
+      .logo img{
+        width:160px;
       }
 
       .nav-actions .btn-outline{
@@ -904,43 +801,54 @@
     }
 
   </style>
+
 </head>
 
 <body>
 
+  <!-- ========================= -->
   <!-- NAVBAR -->
+  <!-- ========================= -->
 
   <nav class="navbar">
 
     <div class="container nav-content">
 
       <div class="logo">
-        <div class="logo-circle">↗</div>
 
-        <div class="logo-text">
-          <strong>CAPITAL</strong>
-          <span>DE BARRIO</span>
-        </div>
+        <!-- ========================= -->
+        <!-- REEMPLAZA ESTE LOGO -->
+        <!-- ========================= -->
+
+        <img src="TU-LOGO.png" alt="Capital de Barrio">
+
       </div>
 
       <div class="nav-links">
         <a href="#">Inicio</a>
         <a href="#">Rutas</a>
         <a href="#">Comunidad</a>
-        <a href="#">Recursos</a>
+        <a href="#">Historias</a>
         <a href="#">Nosotros</a>
       </div>
 
       <div class="nav-actions">
-        <button class="btn btn-outline">Iniciar sesión</button>
-        <button class="btn btn-primary">Empieza gratis</button>
+        <button class="btn btn-outline">
+          Ver rutas
+        </button>
+
+        <button class="btn btn-primary">
+          Empieza gratis
+        </button>
       </div>
 
     </div>
 
   </nav>
 
+  <!-- ========================= -->
   <!-- HERO -->
+  <!-- ========================= -->
 
   <section class="hero">
 
@@ -954,55 +862,70 @@
         </div>
 
         <h1>
-          Tu esfuerzo
-          puede <span>crecer.</span>
+          Del barrio
+          al <span>progreso.</span>
         </h1>
 
         <p>
-          Aprende gratis a ordenar tu negocio, mejorar tus ingresos y construir el futuro que tu familia merece.
+          Aprende gratis a ordenar tu negocio, mejorar tus ingresos y construir un futuro más tranquilo para tu familia.
         </p>
 
         <div class="hero-actions">
-          <button class="btn btn-primary">Empieza gratis</button>
-          <button class="btn btn-outline">Ver rutas</button>
+
+          <button class="btn btn-primary">
+            Empieza gratis
+          </button>
+
+          <button class="btn btn-outline">
+            Ver rutas
+          </button>
+
         </div>
 
         <div class="hero-badges">
 
           <div class="badge-card">
+
             <div class="badge-icon yellow">✓</div>
 
             <div>
               <h4>100% Gratis</h4>
               <span>Aprende sin pagar</span>
             </div>
+
           </div>
 
           <div class="badge-card">
+
             <div class="badge-icon green">📱</div>
 
             <div>
               <h4>Desde tu celular</h4>
               <span>Simple y rápido</span>
             </div>
+
           </div>
 
           <div class="badge-card">
+
             <div class="badge-icon blue">▶</div>
 
             <div>
               <h4>Contenido práctico</h4>
-              <span>Videos cortos y fáciles</span>
+              <span>Videos simples</span>
             </div>
+
           </div>
 
           <div class="badge-card">
+
             <div class="badge-icon coral">♥</div>
 
             <div>
               <h4>Comunidad real</h4>
               <span>No estás solo</span>
             </div>
+
           </div>
 
         </div>
@@ -1015,7 +938,11 @@
 
       <div class="hero-image">
 
-        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop" alt="Emprendedora peruana">
+        <!-- ========================= -->
+        <!-- REEMPLAZA ESTA IMAGEN -->
+        <!-- ========================= -->
+
+        <img src="hero-emprendedora.jpg" alt="Emprendedora">
 
         <div class="floating-card floating-top">
 
@@ -1023,9 +950,9 @@
 
           <ul>
             <li>✔ Más ventas</li>
-            <li>✔ Mejor organización</li>
+            <li>✔ Más organización</li>
             <li>✔ Más ahorro</li>
-            <li>✔ Negocios creciendo</li>
+            <li>✔ Más tranquilidad</li>
           </ul>
 
         </div>
@@ -1038,7 +965,9 @@
 
           <h3>Nivel 3</h3>
 
-          <p>Ya aprendiste a separar tu dinero y controlar tus gastos.</p>
+          <p>
+            Ya aprendiste a separar tu dinero y controlar tus gastos.
+          </p>
 
         </div>
 
@@ -1048,283 +977,107 @@
 
   </section>
 
- <!-- ========================= -->
-<!-- NUEVA SECCIÓN RUTAS HUMANAS -->
-<!-- REEMPLAZA TU SECTION "RUTAS" -->
-<!-- ========================= -->
+  <!-- ========================= -->
+  <!-- RUTAS -->
+  <!-- ========================= -->
 
-<section class="section human-routes">
+  <section class="section human-routes">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="section-title">
+      <div class="section-title">
 
-      <span class="mini-tag">
-        Hecho para emprendedores reales
-      </span>
-
-      <h2>¿Cuál se parece más a ti?</h2>
-
-      <p>
-        Cada ruta fue creada pensando en personas reales del Perú.
-        Aprende con ejemplos simples, herramientas útiles y contenido pensado para tu día a día.
-      </p>
-
-    </div>
-
-    <div class="human-routes-grid">
-
-      <!-- CARD 1 -->
-
-      <div class="human-route-card">
-
-        <div class="human-image">
-
-          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="Negocio de comida">
-
-          <div class="human-badge green-badge">
-            🍲 Negocios de comida
-          </div>
-
-        </div>
-
-        <div class="human-content">
-
-          <h3>Negocios que alimentan familias</h3>
-
-          <p>
-            Para personas que venden comida, desayuno, menú o trabajan cada día para que su negocio siga creciendo.
-          </p>
-
-          <div class="learn-list">
-
-            <span>✔ Cómo vender más</span>
-            <span>✔ Cómo evitar pérdidas</span>
-            <span>✔ Cómo organizar ganancias</span>
-            <span>✔ Cómo ahorrar poco a poco</span>
-
-          </div>
-
-          <button class="btn btn-primary">
-            Ver ruta
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 2 -->
-
-      <div class="human-route-card">
-
-        <div class="human-image">
-
-          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="Ventas">
-
-          <div class="human-badge yellow-badge">
-            🛍️ Ventas diarias
-          </div>
-
-        </div>
-
-        <div class="human-content">
-
-          <h3>Emprendedores que venden todos los días</h3>
-
-          <p>
-            Para vendedores ambulantes, pequeños comercios y negocios que quieren crecer con más orden.
-          </p>
-
-          <div class="learn-list">
-
-            <span>✔ Cómo atraer clientes</span>
-            <span>✔ Cómo usar WhatsApp</span>
-            <span>✔ Cómo poner precios</span>
-            <span>✔ Cómo mejorar ventas</span>
-
-          </div>
-
-          <button class="btn btn-primary">
-            Ver ruta
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 3 -->
-
-      <div class="human-route-card">
-
-        <div class="human-image">
-
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="Mujeres emprendedoras">
-
-          <div class="human-badge coral-badge">
-            👩‍👧 Mujeres emprendedoras
-          </div>
-
-        </div>
-
-        <div class="human-content">
-
-          <h3>Mujeres que construyen futuro</h3>
-
-          <p>
-            Herramientas simples para mujeres emprendedoras que quieren hacer crecer su hogar y su negocio.
-          </p>
-
-          <div class="learn-list">
-
-            <span>✔ Organización del tiempo</span>
-            <span>✔ Ventas digitales</span>
-            <span>✔ Ahorro simple</span>
-            <span>✔ Crecimiento personal</span>
-
-          </div>
-
-          <button class="btn btn-primary">
-            Ver ruta
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 4 -->
-
-      <div class="human-route-card">
-
-        <div class="human-image">
-
-          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop" alt="Negocios familiares">
-
-          <div class="human-badge blue-badge">
-            🛠️ Negocios familiares
-          </div>
-
-        </div>
-
-        <div class="human-content">
-
-          <h3>Negocios que empezaron con esfuerzo</h3>
-
-          <p>
-            Para talleres, técnicos y negocios familiares que quieren dar el siguiente paso.
-          </p>
-
-          <div class="learn-list">
-
-            <span>✔ Organización del negocio</span>
-            <span>✔ Atención al cliente</span>
-            <span>✔ Trabajo en equipo</span>
-            <span>✔ Crecimiento responsable</span>
-
-          </div>
-
-          <button class="btn btn-primary">
-            Ver ruta
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ========================= -->
-<!-- NUEVA SECCIÓN OPORTUNIDADES -->
-<!-- AGREGAR DEBAJO DE GAMIFICATION -->
-<!-- ========================= -->
-
-<section class="section opportunities-section">
-
-  <div class="container">
-
-    <div class="opportunities-box">
-
-      <div class="section-title light-title">
-
-        <span class="mini-tag dark-mini">
-          Tu progreso importa
+        <span class="mini-tag">
+          Hecho para emprendedores reales
         </span>
 
-        <h2>Tu avance abre nuevas oportunidades</h2>
+        <h2>
+          ¿Cuál se parece más a ti?
+        </h2>
 
         <p>
-          Capital de Barrio no solo te ayuda a aprender.
-          Te acompaña en tu crecimiento para prepararte para nuevas oportunidades.
+          Aprende con ejemplos simples, herramientas útiles y contenido pensado para tu día a día.
         </p>
 
       </div>
 
-      <div class="opportunities-grid">
+      <div class="human-routes-grid">
 
-        <!-- STEP -->
+        <!-- CARD -->
 
-        <div class="op-card">
+        <div class="human-route-card">
 
-          <div class="op-number">
-            1
+          <div class="human-image">
+
+            <img src="ruta-comida.jpg" alt="Negocios de comida">
+
+            <div class="human-badge green-badge">
+              🍲 Negocios de comida
+            </div>
+
           </div>
 
-          <h3>Aprende paso a paso</h3>
+          <div class="human-content">
 
-          <p>
-            Videos simples y herramientas prácticas para tu negocio y tu día a día.
-          </p>
+            <h3>Negocios que alimentan familias</h3>
+
+            <p>
+              Para personas que venden comida, desayuno, menú o trabajan cada día para que su negocio siga creciendo.
+            </p>
+
+            <div class="learn-list">
+
+              <span>✔ Cómo vender más</span>
+              <span>✔ Cómo evitar pérdidas</span>
+              <span>✔ Cómo organizar ganancias</span>
+              <span>✔ Cómo ahorrar poco a poco</span>
+
+            </div>
+
+            <button class="btn btn-primary">
+              Ver ruta
+            </button>
+
+          </div>
 
         </div>
 
-        <!-- STEP -->
+        <!-- CARD -->
 
-        <div class="op-card">
+        <div class="human-route-card">
 
-          <div class="op-number">
-            2
+          <div class="human-image">
+
+            <img src="ruta-ventas.jpg" alt="Ventas">
+
+            <div class="human-badge yellow-badge">
+              🛍️ Ventas diarias
+            </div>
+
           </div>
 
-          <h3>Participa en talleres</h3>
+          <div class="human-content">
 
-          <p>
-            Conoce otros emprendedores y sigue creciendo acompañado.
-          </p>
+            <h3>Emprendedores que venden todos los días</h3>
 
-        </div>
+            <p>
+              Para vendedores ambulantes, pequeños comercios y negocios que quieren crecer con más orden.
+            </p>
 
-        <!-- STEP -->
+            <div class="learn-list">
 
-        <div class="op-card">
+              <span>✔ Cómo atraer clientes</span>
+              <span>✔ Cómo usar WhatsApp</span>
+              <span>✔ Cómo poner precios</span>
+              <span>✔ Cómo mejorar ventas</span>
 
-          <div class="op-number">
-            3
+            </div>
+
+            <button class="btn btn-primary">
+              Ver ruta
+            </button>
+
           </div>
-
-          <h3>Construye tu progreso</h3>
-
-          <p>
-            Tu constancia y avance desbloquean nuevas herramientas y beneficios.
-          </p>
-
-        </div>
-
-        <!-- STEP -->
-
-        <div class="op-card">
-
-          <div class="op-number">
-            4
-          </div>
-
-          <h3>Prepárate para crecer más</h3>
-
-          <p>
-            A medida que avances podrás prepararte para futuras oportunidades de financiamiento.
-          </p>
 
         </div>
 
@@ -1332,11 +1085,11 @@
 
     </div>
 
-  </div>
+  </section>
 
-</section>
-
+  <!-- ========================= -->
   <!-- GAMIFICATION -->
+  <!-- ========================= -->
 
   <section class="section">
 
@@ -1348,10 +1101,12 @@
 
           <div class="game-left">
 
-            <h2>Tú sí puedes crecer.</h2>
+            <h2>
+              Tú sí puedes crecer.
+            </h2>
 
             <p>
-              Avanza paso a paso con rutas simples, insignias, progreso y metas reales para tu negocio.
+              Avanza paso a paso con rutas simples, progreso, insignias y metas reales para tu negocio.
             </p>
 
             <div class="stats">
@@ -1431,7 +1186,9 @@
 
   </section>
 
+  <!-- ========================= -->
   <!-- TESTIMONIOS -->
+  <!-- ========================= -->
 
   <section class="section">
 
@@ -1457,7 +1214,7 @@
 
           <div class="user">
 
-            <img src="https://randomuser.me/api/portraits/women/68.jpg">
+            <img src="testimonio1.jpg">
 
             <div>
               <strong>Rosa, 42 años</strong>
@@ -1476,7 +1233,7 @@
 
           <div class="user">
 
-            <img src="https://randomuser.me/api/portraits/men/32.jpg">
+            <img src="testimonio2.jpg">
 
             <div>
               <strong>Luis, 35 años</strong>
@@ -1495,7 +1252,7 @@
 
           <div class="user">
 
-            <img src="https://randomuser.me/api/portraits/women/44.jpg">
+            <img src="testimonio3.jpg">
 
             <div>
               <strong>María, 28 años</strong>
@@ -1512,85 +1269,48 @@
 
   </section>
 
-  <!-- MODULES -->
+  <!-- ========================= -->
+  <!-- IMPACTO -->
+  <!-- ========================= -->
 
-  <section class="section">
+  <section class="section impact-section">
 
     <div class="container">
 
-      <div class="modules">
+      <div class="impact-box">
 
-        <div class="section-title">
+        <div>
 
-          <h2>Rutas de crecimiento</h2>
+          <h2>
+            Esto recién empieza.
+          </h2>
 
           <p>
-            Sin palabras complicadas. Sin teoría difícil. Solo herramientas reales para crecer paso a paso.
+            Miles de emprendedores trabajan todos los días para salir adelante.
+            Capital de Barrio existe para acompañarlos con herramientas, educación y oportunidades reales.
           </p>
+
+          <div class="impact-actions">
+
+            <button class="btn btn-primary">
+              Ver impacto
+            </button>
+
+            <button class="btn btn-outline">
+              Cómo apoyar
+            </button>
+
+          </div>
 
         </div>
 
-        <div class="module-grid">
+        <div class="impact-image">
 
-          <div class="module-card">
+          <!-- ========================= -->
+          <!-- REEMPLAZA ESTA IMAGEN -->
+          <!-- ========================= -->
 
-            <div class="route-icon yellow">💰</div>
-
-            <h3>Ordenar mi dinero</h3>
-
-            <ul>
-              <li>✔ Cómo separar tu dinero</li>
-              <li>✔ Cómo controlar gastos</li>
-              <li>✔ Cómo ahorrar poco a poco</li>
-              <li>✔ Cómo evitar deudas peligrosas</li>
-            </ul>
-
-          </div>
-
-          <div class="module-card">
-
-            <div class="route-icon green">📈</div>
-
-            <h3>Vender más</h3>
-
-            <ul>
-              <li>✔ Cómo atraer clientes</li>
-              <li>✔ Cómo usar WhatsApp</li>
-              <li>✔ Cómo tomar mejores fotos</li>
-              <li>✔ Cómo generar confianza</li>
-            </ul>
-
-          </div>
-
-          <div class="module-card">
-
-            <div class="route-icon blue">👥</div>
-
-            <h3>Capital humano</h3>
-
-            <ul>
-              <li>✔ Cómo repartir tareas</li>
-              <li>✔ Cómo trabajar en equipo</li>
-              <li>✔ Cómo organizar horarios</li>
-              <li>✔ Cómo evitar conflictos</li>
-            </ul>
-
-          </div>
-
-          <div class="module-card">
-
-            <div class="route-icon coral">📱</div>
-
-            <h3>Digitalización</h3>
-
-            <ul>
-              <li>✔ Cómo usar Yape</li>
-              <li>✔ Cómo cobrar digitalmente</li>
-              <li>✔ Cómo vender online</li>
-              <li>✔ Cómo crear catálogo</li>
-            </ul>
-
-          </div>
+          <img src="impacto.jpg" alt="Impacto">
 
         </div>
 
@@ -1600,41 +1320,9 @@
 
   </section>
 
-  <!-- COMMUNITY -->
-
-  <section class="section community">
-
-    <div class="container">
-
-      <div class="community-box">
-
-        <div>
-
-          <h2>No estás solo.</h2>
-
-          <p>
-            Miles de emprendedores están aprendiendo juntos, compartiendo experiencias y ayudándose a crecer.
-          </p>
-
-          <button class="btn btn-primary">
-            Unirme a la comunidad
-          </button>
-
-        </div>
-
-        <div>
-
-          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop">
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
+  <!-- ========================= -->
   <!-- CTA -->
+  <!-- ========================= -->
 
   <section class="cta">
 
@@ -1646,7 +1334,7 @@
       </h2>
 
       <p>
-        Da el primer paso gratuitamente y aprende herramientas simples para crecer con más tranquilidad, orden y oportunidades.
+        Aprende herramientas simples para crecer con más tranquilidad, orden y oportunidades.
       </p>
 
       <button class="btn btn-primary">
@@ -1657,7 +1345,9 @@
 
   </section>
 
+  <!-- ========================= -->
   <!-- FOOTER -->
+  <!-- ========================= -->
 
   <footer>
 
@@ -1668,8 +1358,13 @@
         <div>
 
           <div class="footer-logo">
-            <strong>CAPITAL</strong>
-            <span>DE BARRIO</span>
+
+            <!-- ========================= -->
+            <!-- REEMPLAZA ESTE LOGO -->
+            <!-- ========================= -->
+
+            <img src="TU-LOGO.png" alt="Capital de Barrio">
+
           </div>
 
           <p>
@@ -1686,8 +1381,8 @@
 
           <a href="#">Inicio</a>
           <a href="#">Rutas</a>
+          <a href="#">Historias</a>
           <a href="#">Comunidad</a>
-          <a href="#">Recursos</a>
 
         </div>
 
@@ -1697,7 +1392,7 @@
 
           <a href="#">Misión</a>
           <a href="#">Impacto</a>
-          <a href="#">Historias</a>
+          <a href="#">Aliados</a>
           <a href="#">Contacto</a>
 
         </div>
