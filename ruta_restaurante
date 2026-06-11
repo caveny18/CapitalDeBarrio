@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ruta Restaurante y Comida | Capital de Barrio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="ruta-comida.css">
+
+</head>
+<body>
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header class="header">
+
+    <div class="header-container">
+
+        <a href="#" class="logo">
+
+            <img src="logo-final.png" alt="Capital de Barrio">
+
+        </a>
+
+        <nav class="menu">
+
+            <a href="#">
+                📊 Mi progreso
+            </a>
+
+            <a href="#">
+                🏆 Certificados
+            </a>
+
+            <a href="#">
+                👤 Mi perfil
+            </a>
+
+            <a href="#" class="whatsapp-link">
+                💬 Ruta por WhatsApp
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- ========================= -->
+<!-- HERO -->
+<!-- ========================= -->
+
+<section class="hero-route">
+
+    <div class="hero-container">
+
+        <!-- IZQUIERDA -->
+
+        <div class="hero-content">
+
+            <a href="#" class="back-link">
+                ← Volver a todas las rutas
+            </a>
+
+            <!-- IMAGEN RUTA -->
+
+            <img
+            src="ruta.png"
+            alt="Ruta"
+            class="ruta-badge">
+
+            <!-- TITULO COMO IMAGEN -->
+
+            <img
+            src="restaurante-comida.png"
+            alt="Ruta Restaurante y Comida"
+            class="ruta-title">
+
+            <p class="hero-description">
+
+                Aprende a organizar tu negocio,
+                calcular costos, vender más y acceder
+                a financiamiento.
+
+            </p>
+
+        </div>
+
+        <!-- DERECHA -->
+
+        <div class="hero-image">
+
+            <img
+            src="emprendedora-comida.jpg"
+            alt="Emprendedora">
+
+            <div class="progress-card">
+
+                <span>
+                    Tu progreso en esta ruta
+                </span>
+
+                <h3>20%</h3>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"></div>
+
+                </div>
+
+                <p>
+                    4 de 20 lecciones completadas
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- LECCIONES -->
+<!-- ========================= -->
+
+<section class="lessons">
+
+    <div class="container">
+
+        <h2>
+            Lecciones de la ruta
+        </h2>
+
+        <!-- LECCION 1 -->
+
+        <div class="lesson completed">
+
+            <div class="lesson-left">
+
+                <div class="lesson-number">
+                    1
+                </div>
+
+                <div class="lesson-play">
+                    ▶
+                </div>
+
+                <div class="lesson-info">
+
+                    <h3>
+                        Separa el dinero de tu negocio del dinero de tu casa
+                    </h3>
+
+                    <span>
+                        ⏱ 3 min
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="lesson-status success">
+
+                ✓ Completada
+
+            </div>
+
+        </div>
+
+        <!-- LECCION 2 -->
+
+        <div class="lesson">
+
+            <div class="lesson-left">
+
+                <div class="lesson-number yellow">
+                    2
+                </div>
+
+                <div class="lesson-lock">
+                    🔒
+                </div>
+
+                <div class="lesson-info">
+
+                    <h3>
+                        ¿Cómo calcular tus costos reales?
+                    </h3>
+
+                    <span>
+                        ⏱ 4 min
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="lesson-status locked">
+
+                🔒 Bloqueada
+
+            </div>
+
+        </div>
+
+        <!-- LECCION 3 -->
+
+        <div class="lesson">
+
+            <div class="lesson-left">
+
+                <div class="lesson-number yellow">
+                    3
+                </div>
+
+                <div class="lesson-lock">
+                    🔒
+                </div>
+
+                <div class="lesson-info">
+
+                    <h3>
+                        Pon el precio correcto a tus platos
+                    </h3>
+
+                    <span>
+                        ⏱ 5 min
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="lesson-status locked">
+
+                🔒 Bloqueada
+
+            </div>
+
+        </div>
+
+        <!-- LECCION 4 -->
+
+        <div class="lesson">
+
+            <div class="lesson-left">
+
+                <div class="lesson-number yellow">
+                    4
+                </div>
+
+                <div class="lesson-lock">
+                    🔒
+                </div>
+
+                <div class="lesson-info">
+
+                    <h3>
+                        Vende más y fideliza a tus clientes
+                    </h3>
+
+                    <span>
+                        ⏱ 4 min
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="lesson-status locked">
+
+                🔒 Bloqueada
+
+            </div>
+
+        </div>
+
+        <!-- LECCION 5 -->
+
+        <div class="lesson">
+
+            <div class="lesson-left">
+
+                <div class="lesson-number yellow">
+                    5
+                </div>
+
+                <div class="lesson-lock">
+                    🔒
+                </div>
+
+                <div class="lesson-info">
+
+                    <h3>
+                        Prepárate para acceder a financiamiento
+                    </h3>
+
+                    <span>
+                        ⏱ 6 min
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="lesson-status locked">
+
+                🔒 Bloqueada
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- WHATSAPP -->
+<!-- ========================= -->
+
+<section class="whatsapp-banner">
+
+    <div class="banner-container">
+
+        <div class="banner-image">
+
+            <img
+            src="barrio-whatsapp.jpg"
+            alt="Barrio">
+
+        </div>
+
+        <div class="banner-content">
+
+            <!-- TEXTO COMO IMAGEN -->
+
+            <img
+            src="aprende-whatsapp.png"
+            alt="Aprende por WhatsApp"
+            class="banner-title">
+
+            <p>
+
+                Te enviamos las lecciones paso a paso,
+                como si conversaras con un asesor.
+
+            </p>
+
+        </div>
+
+        <div class="banner-action">
+
+            <a href="#" class="whatsapp-btn">
+
+                💬 Continuar por WhatsApp
+
+            </a>
+
+            <span>
+
+                Gratis, fácil y desde tu celular.
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FRASE FINAL -->
+<!-- ========================= -->
+
+<section class="final-message">
+
+    <img
+    src="hecho-para-la-gente.png"
+    alt="Hecho para la gente que se gana el día">
+
+</section>
+
+</body>
+</html>
