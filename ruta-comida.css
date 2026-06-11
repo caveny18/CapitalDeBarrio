@@ -1,0 +1,515 @@
+:root{
+    --yellow:#f2b51b;
+    --green:#67c62f;
+    --dark:#02111f;
+    --white:#ffffff;
+    --gray:#f5f5f3;
+    --border:#e6e6e6;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#faf9f6;
+    color:var(--dark);
+    overflow-x:hidden;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.header{
+    background:white;
+    border-bottom:1px solid #ececec;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.header-container{
+    max-width:1400px;
+    margin:auto;
+    padding:18px 40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo img{
+    height:75px;
+}
+
+.menu{
+    display:flex;
+    gap:45px;
+    align-items:center;
+}
+
+.menu a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:600;
+    font-size:16px;
+}
+
+.whatsapp-link{
+    color:var(--green) !important;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero-route{
+    background:#faf9f6;
+    padding:40px;
+}
+
+.hero-container{
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+}
+
+.hero-content{
+    padding-right:50px;
+}
+
+.back-link{
+    display:inline-block;
+    text-decoration:none;
+    color:#222;
+    margin-bottom:35px;
+    font-weight:600;
+}
+
+.ruta-badge{
+    width:140px;
+    display:block;
+    margin-bottom:20px;
+}
+
+.ruta-title{
+    width:100%;
+    max-width:500px;
+    margin-bottom:25px;
+}
+
+.hero-description{
+    font-size:30px;
+    line-height:1.6;
+    max-width:600px;
+    color:#202020;
+}
+
+/* ========================= */
+/* FOTO */
+/* ========================= */
+
+.hero-image{
+    position:relative;
+}
+
+.hero-image img{
+    width:100%;
+    border-radius:8px;
+    display:block;
+}
+
+/* ========================= */
+/* PROGRESO */
+/* ========================= */
+
+.progress-card{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+
+    background:#02111f;
+
+    padding:25px 30px;
+
+    border-radius:12px;
+
+    width:500px;
+
+    color:white;
+}
+
+.progress-card span{
+    display:block;
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+.progress-card h3{
+    color:var(--yellow);
+    font-size:60px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.progress-bar{
+    width:100%;
+    height:16px;
+    background:rgba(255,255,255,.25);
+    border-radius:100px;
+    overflow:hidden;
+    margin-bottom:15px;
+}
+
+.progress-fill{
+    width:20%;
+    height:100%;
+    background:var(--green);
+    border-radius:100px;
+}
+
+.progress-card p{
+    font-size:18px;
+}
+
+/* ========================= */
+/* LECCIONES */
+/* ========================= */
+
+.lessons{
+    padding:80px 40px;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+.lessons h2{
+    font-size:42px;
+    margin-bottom:35px;
+    position:relative;
+}
+
+.lessons h2::after{
+    content:"";
+    display:block;
+    width:100px;
+    height:5px;
+    background:var(--green);
+    margin-top:10px;
+    border-radius:50px;
+}
+
+.lesson{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:22px 30px;
+
+    margin-bottom:18px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    transition:.3s;
+}
+
+.lesson:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.completed{
+    border:2px solid var(--green);
+}
+
+.lesson-left{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.lesson-number{
+    width:70px;
+    height:70px;
+
+    border-radius:12px;
+
+    background:var(--green);
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:34px;
+    font-weight:800;
+}
+
+.yellow{
+    background:var(--yellow);
+}
+
+.lesson-play,
+.lesson-lock{
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    border:2px solid #dddddd;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:26px;
+}
+
+.lesson-play{
+    color:var(--green);
+}
+
+.lesson-info h3{
+    font-size:34px;
+    margin-bottom:10px;
+    max-width:700px;
+}
+
+.lesson-info span{
+    color:#666;
+}
+
+.lesson-status{
+    min-width:190px;
+
+    text-align:center;
+
+    padding:14px 20px;
+
+    border-radius:14px;
+
+    font-weight:700;
+}
+
+.success{
+    color:var(--green);
+    border:2px solid var(--green);
+}
+
+.locked{
+    color:#d6a400;
+    border:2px solid #f1d56b;
+}
+
+/* ========================= */
+/* WHATSAPP */
+/* ========================= */
+
+.whatsapp-banner{
+    padding:0 40px 80px;
+}
+
+.banner-container{
+    max-width:1400px;
+    margin:auto;
+
+    background:#02111f;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    display:grid;
+    grid-template-columns:280px 1fr 350px;
+}
+
+.banner-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.banner-content{
+    padding:40px;
+    color:white;
+}
+
+.banner-title{
+    width:100%;
+    max-width:450px;
+    margin-bottom:20px;
+}
+
+.banner-content p{
+    font-size:24px;
+    line-height:1.7;
+}
+
+.banner-action{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.whatsapp-btn{
+    background:var(--green);
+    color:white;
+
+    text-decoration:none;
+
+    padding:20px 35px;
+
+    border-radius:14px;
+
+    font-weight:700;
+    font-size:22px;
+
+    margin-bottom:15px;
+}
+
+.banner-action span{
+    color:white;
+    text-align:center;
+}
+
+/* ========================= */
+/* FRASE FINAL */
+/* ========================= */
+
+.final-message{
+    text-align:center;
+    padding:30px 20px 80px;
+}
+
+.final-message img{
+    max-width:500px;
+    width:100%;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:1100px){
+
+    .hero-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .hero-content{
+        padding-right:0;
+    }
+
+    .progress-card{
+        width:90%;
+    }
+
+    .banner-container{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .header-container{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .hero-route{
+        padding:25px;
+    }
+
+    .lessons{
+        padding:60px 20px;
+    }
+
+    .lesson{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .lesson-left{
+        flex-wrap:wrap;
+    }
+
+    .lesson-info h3{
+        font-size:24px;
+    }
+
+    .hero-description{
+        font-size:22px;
+    }
+
+    .progress-card{
+        position:relative;
+        width:100%;
+        left:auto;
+        bottom:auto;
+        margin-top:20px;
+    }
+
+    .progress-card h3{
+        font-size:42px;
+    }
+
+    .banner-content p{
+        font-size:18px;
+    }
+
+    .whatsapp-btn{
+        width:100%;
+        text-align:center;
+        font-size:18px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .lesson-number,
+    .lesson-play,
+    .lesson-lock{
+        width:55px;
+        height:55px;
+        font-size:24px;
+    }
+
+    .lessons h2{
+        font-size:30px;
+    }
+
+    .hero-description{
+        font-size:18px;
+    }
+
+}
