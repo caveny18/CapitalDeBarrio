@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosotros | Capital de Barrio</title>
+  <meta name="description" content="Conoce Capital de Barrio: educación financiera, mentoría y herramientas prácticas para emprendedores del barrio." />
+
+  <!-- Tipografías similares al estilo de la página principal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #061522;
+      --bg-2: #081d2c;
+      --card: rgba(255, 255, 255, 0.055);
+      --card-2: rgba(255, 255, 255, 0.085);
+      --line: rgba(255, 255, 255, 0.12);
+      --text: #f6f8fb;
+      --muted: #b9c4cf;
+      --yellow: #ffc400;
+      --green: #47c247;
+      --dark-green: #179d44;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 80% 0%, rgba(71, 194, 71, 0.14), transparent 28%),
+        radial-gradient(circle at 12% 12%, rgba(255, 196, 0, 0.13), transparent 24%),
+        linear-gradient(180deg, #05131f 0%, #071827 42%, #061522 100%);
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 42px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: rgba(5, 18, 30, 0.78);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 205px;
+    }
+
+    .brand-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--yellow), #fff1a6);
+      color: #061522;
+      box-shadow: 0 14px 32px rgba(255, 196, 0, 0.18);
+      font-size: 26px;
+      font-weight: 900;
+    }
+
+    .brand-title {
+      display: block;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      font-size: 15px;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--yellow);
+      font-family: "Permanent Marker", cursive;
+      letter-spacing: 0.06em;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: #d8e1e9;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .menu a {
+      opacity: 0.88;
+      transition: 0.2s ease;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      color: var(--yellow);
+      opacity: 1;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: 0.22s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: #061522;
+      box-shadow: 0 18px 38px rgba(255, 196, 0, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 46px rgba(255, 196, 0, 0.28);
+    }
+
+    .btn-outline {
+      color: #ffffff;
+      border-color: rgba(255, 196, 0, 0.45);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--yellow);
+      background: rgba(255, 196, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      color: white;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-weight: 900;
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 650px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(3, 14, 25, 0.97) 0%, rgba(3, 14, 25, 0.9) 33%, rgba(3, 14, 25, 0.68) 58%, rgba(3, 14, 25, 0.35) 100%),
+        url("./assets/nosotros-barrio.jpg");
+      background-size: cover;
+      background-position: center right;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(3, 14, 25, 0.1) 0%, rgba(3, 14, 25, 0.6) 100%),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 4px);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 40px;
+      align-items: center;
+      padding: 72px 0 82px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #e7eef5;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .eyebrow span {
+      color: var(--yellow);
+    }
+
+    h1 {
+      margin: 26px 0 0;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(76px, 11vw, 148px);
+      line-height: 0.86;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      text-shadow: 0 10px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .marker {
+      display: block;
+      margin-top: 8px;
+      font-family: "Permanent Marker", cursive;
+      color: var(--yellow);
+      font-size: clamp(42px, 7.1vw, 86px);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      transform: rotate(-1.4deg);
+      text-shadow: 0 8px 30px rgba(0, 0, 0, 0.42);
+    }
+
+    .hero-lead {
+      max-width: 650px;
+      margin: 28px 0 0;
+      color: #dce6ef;
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .hero-lead strong {
+      color: var(--green);
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 54px;
+      max-width: 620px;
+    }
+
+    .mini-card {
+      min-height: 92px;
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 18px;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.16);
+    }
+
+    .mini-card b {
+      display: block;
+      color: var(--green);
+      font-size: 19px;
+      margin-bottom: 6px;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: #cad5dd;
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .hero-panel {
+      justify-self: end;
+      width: min(100%, 440px);
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      backdrop-filter: blur(12px);
+    }
+
+    .panel-title {
+      margin: 0;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: 42px;
+      letter-spacing: 0.04em;
+    }
+
+    .panel-title span {
+      color: var(--yellow);
+    }
+
+    .panel-copy {
+      color: #c8d5df;
+      line-height: 1.65;
+      margin: 10px 0 22px;
+      font-weight: 600;
+    }
+
+    .score-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .score-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      background: rgba(4, 17, 28, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+    }
+
+    .score-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(255, 196, 0, 0.13);
+      color: var(--yellow);
+      font-size: 20px;
+    }
+
+    .score-item b {
+      display: block;
+      color: #ffffff;
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .score-item span {
+      display: block;
+      color: #b8c6d2;
+      font-size: 13px;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    .kicker {
+      color: var(--yellow);
+      font-family: "Permanent Marker", cursive;
+      font-size: 22px;
+      margin-bottom: 10px;
+      display: inline-block;
+      transform: rotate(-1deg);
+    }
+
+    h2 {
+      margin: 0;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 0.92;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    .section-head p,
+    .wide-copy {
+      margin: 0;
+      color: #c4d1dc;
+      font-size: 18px;
+      line-height: 1.7;
+      font-weight: 600;
+    }
+
+    .section-head strong,
+    .wide-copy strong {
+      color: var(--green);
+    }
+
+    .story-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.055);
+      box-shadow: var(--shadow);
+    }
+
+    .story-media {
+      min-height: 420px;
+      background:
+        linear-gradient(135deg, rgba(255, 196, 0, 0.76), rgba(71, 194, 71, 0.45)),
+        url("./assets/comunidad-barrio.jpg");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .story-media::after {
+      content: "Educación que abre crédito.";
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      width: min(72%, 330px);
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: 54px;
+      line-height: 0.9;
+      letter-spacing: 0.03em;
+      color: #061522;
+      text-transform: uppercase;
+    }
+
+    .story-body {
+      padding: clamp(30px, 5vw, 58px);
+      display: grid;
+      align-content: center;
+    }
+
+    .story-body p {
+      color: #cfdae4;
+      font-size: 18px;
+      line-height: 1.78;
+      margin: 0 0 20px;
+      font-weight: 600;
+    }
+
+    .quote {
+      margin-top: 18px;
+      padding: 22px 24px;
+      border-left: 5px solid var(--yellow);
+      background: rgba(255, 196, 0, 0.08);
+      border-radius: 0 18px 18px 0;
+      color: #fff;
+      font-size: 20px;
+      line-height: 1.5;
+      font-weight: 900;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .pillar {
+      position: relative;
+      min-height: 310px;
+      padding: 30px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      overflow: hidden;
+      transition: 0.22s ease;
+    }
+
+    .pillar:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.085);
+      border-color: rgba(255, 196, 0, 0.35);
+    }
+
+    .pillar::before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -65px;
+      top: -65px;
+      background: rgba(255, 196, 0, 0.14);
+      border-radius: 999px;
+    }
+
+    .pillar-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: rgba(255, 196, 0, 0.13);
+      color: var(--yellow);
+      font-size: 27px;
+      margin-bottom: 22px;
+    }
+
+    .pillar h3 {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 23px;
+      line-height: 1.15;
+    }
+
+    .pillar p {
+      margin: 0;
+      color: #cad6df;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .model {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0)),
+        #071827;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .step {
+      counter-increment: step;
+      position: relative;
+      padding: 28px 24px;
+      min-height: 260px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .step::before {
+      content: "0" counter(step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--yellow);
+      color: #061522;
+      font-weight: 900;
+      margin-bottom: 22px;
+      box-shadow: 0 16px 32px rgba(255, 196, 0, 0.18);
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+      color: #fff;
+    }
+
+    .step p {
+      margin: 0;
+      color: #c1ceda;
+      line-height: 1.62;
+      font-weight: 600;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .impact-main,
+    .impact-side {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-xl);
+      padding: clamp(28px, 5vw, 52px);
+      box-shadow: var(--shadow);
+    }
+
+    .impact-main h2 {
+      margin-bottom: 20px;
+    }
+
+    .impact-main p {
+      color: #c9d5df;
+      font-size: 18px;
+      line-height: 1.72;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .metric {
+      padding: 24px;
+      border-radius: 20px;
+      background: rgba(4, 17, 28, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .metric strong {
+      display: block;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: 54px;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      color: var(--yellow);
+    }
+
+    .metric span {
+      color: #c6d2dc;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .member {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+    }
+
+    .avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      background: linear-gradient(135deg, rgba(255, 196, 0, 0.95), rgba(71, 194, 71, 0.9));
+      color: #061522;
+      font-weight: 900;
+      font-size: 23px;
+    }
+
+    .member h3 {
+      margin: 0 0 5px;
+      font-size: 23px;
+    }
+
+    .member .role {
+      color: var(--yellow);
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .member p {
+      margin: 0;
+      color: #c5d1db;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .cta {
+      padding: 0 0 96px;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(255, 196, 0, 0.98), rgba(71, 194, 71, 0.94));
+      color: #061522;
+      padding: clamp(34px, 6vw, 70px);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta-box::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -110px;
+      width: 290px;
+      height: 290px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .cta-box h2 {
+      color: #061522;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      margin: 0;
+      max-width: 720px;
+      font-size: 18px;
+      line-height: 1.65;
+      font-weight: 800;
+    }
+
+    .cta-box .btn-outline {
+      background: #061522;
+      color: #fff;
+      border-color: #061522;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 32px 0;
+      color: #aebbc7;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .menu,
+      .nav-actions {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+      }
+
+      .nav.open {
+        height: auto;
+        padding: 16px 0;
+        align-items: flex-start;
+      }
+
+      .nav.open .menu,
+      .nav.open .nav-actions {
+        display: flex;
+      }
+
+      .nav.open {
+        flex-wrap: wrap;
+      }
+
+      .nav.open .menu {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 12px 0 4px;
+      }
+
+      .nav.open .nav-actions {
+        width: 100%;
+        padding-bottom: 6px;
+      }
+
+      .hero-grid,
+      .section-head,
+      .story-card,
+      .impact-grid,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        justify-self: start;
+        width: 100%;
+      }
+
+      .pillars,
+      .steps,
+      .team {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        padding: 52px 0 62px;
+      }
+
+      .hero-proof,
+      .pillars,
+      .steps,
+      .metrics,
+      .team {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .story-media {
+        min-height: 330px;
+      }
+
+      .story-media::after {
+        font-size: 42px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="container nav" id="nav">
+        <a class="brand" href="index.html" aria-label="Capital de Barrio">
+          <div class="brand-icon">⌂</div>
+          <div>
+            <span class="brand-title">CAPITAL<br>DE BARRIO</span>
+            <span class="brand-subtitle">Educación que abre crédito.</span>
+          </div>
+        </a>
+
+        <nav class="menu" aria-label="Menú principal">
+          <a href="index.html">Inicio</a>
+          <a href="nosotros.html" class="active">Nosotros</a>
+          <a href="index.html#rutas">Rutas</a>
+          <a href="index.html#mentoria">Mentoría</a>
+          <a href="index.html#contacto">Contacto</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-outline" href="index.html#rutas">Ver rutas</a>
+          <a class="btn btn-primary" href="index.html#empezar">Empieza gratis</a>
+        </div>
+
+        <button class="mobile-toggle" type="button" onclick="document.getElementById('nav').classList.toggle('open')">Menú</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="titulo-nosotros">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Somos <span>Capital de Barrio</span></div>
+            <h1 id="titulo-nosotros">Nosotros <span class="marker">creemos en el barrio.</span></h1>
+            <p class="hero-lead">
+              Nacimos para ayudar a emprendedores populares a ordenar su negocio, entender sus números y construir historial para acceder a <strong>mejores oportunidades de crédito</strong>.
+            </p>
+            <div class="hero-buttons">
+              <a class="btn btn-primary" href="#modelo">Conoce el modelo</a>
+              <a class="btn btn-outline" href="#equipo">Conoce al equipo</a>
+            </div>
+
+            <div class="hero-proof">
+              <article class="mini-card">
+                <b>💡 Educación</b>
+                <p>Aprendizaje práctico para tomar mejores decisiones con caja, ventas y deuda.</p>
+              </article>
+              <article class="mini-card">
+                <b>🤝 Mentoría</b>
+                <p>Acompañamiento cercano para ordenar el negocio paso a paso.</p>
+              </article>
+              <article class="mini-card">
+                <b>📈 Crecimiento</b>
+                <p>Herramientas simples para mejorar ingresos, margen y control financiero.</p>
+              </article>
+              <article class="mini-card">
+                <b>🏘 Comunidad</b>
+                <p>Una red de emprendedores que aprende, comparte y progresa.</p>
+              </article>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Resumen de propósito">
+            <h2 class="panel-title">Del barrio <span>al progreso.</span></h2>
+            <p class="panel-copy">
+              No damos teoría complicada. Convertimos finanzas, crédito y gestión en herramientas entendibles para quien vende, produce, atiende y mueve la economía real todos los días.
+            </p>
+            <div class="score-list">
+              <div class="score-item">
+                <div class="score-icon">1</div>
+                <div>
+                  <b>Ordenar el negocio</b>
+                  <span>Separar caja personal, caja del negocio, costos, deuda y utilidad real.</span>
+                </div>
+              </div>
+              <div class="score-item">
+                <div class="score-icon">2</div>
+                <div>
+                  <b>Medir el avance</b>
+                  <span>Usar indicadores simples para saber si el negocio mejora o se está descapitalizando.</span>
+                </div>
+              </div>
+              <div class="score-item">
+                <div class="score-icon">3</div>
+                <div>
+                  <b>Abrir oportunidades</b>
+                  <span>Preparar al emprendedor para negociar mejor, financiarse mejor y crecer con control.</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="historia">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="kicker">Nuestra historia</span>
+              <h2>El crédito debe empezar con educación.</h2>
+            </div>
+            <p>
+              Muchos negocios de barrio venden todos los días, pero no siempre saben cuánto ganan, cuánto deben, qué margen tienen o cuánto dinero pueden reinvertir. Ahí empieza nuestro trabajo.
+            </p>
+          </div>
+
+          <div class="story-card">
+            <div class="story-media" role="img" aria-label="Emprendedores de barrio trabajando"></div>
+            <div class="story-body">
+              <p>
+                Capital de Barrio nace para acompañar a emprendedores que sostienen la economía local: bodegas, puestos de mercado, pequeños talleres, comercios familiares y negocios que quieren crecer, pero necesitan herramientas claras.
+              </p>
+              <p>
+                Nuestro enfoque es directo: primero educación financiera, luego orden de información, después medición de comportamiento y finalmente acceso responsable a oportunidades.
+              </p>
+              <div class="quote">
+                No queremos endeudar al emprendedor. Queremos prepararlo para que el crédito sea una herramienta de crecimiento, no una carga.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="kicker">Lo que hacemos</span>
+              <h2>Tres pilares para avanzar con orden.</h2>
+            </div>
+            <p>
+              El progreso no se sostiene solo con ganas. Se sostiene con información, disciplina financiera y decisiones mejor tomadas.
+            </p>
+          </div>
+
+          <div class="pillars">
+            <article class="pillar">
+              <div class="pillar-icon">💡</div>
+              <h3>Educación financiera práctica</h3>
+              <p>Explicamos caja, costos, margen, ahorro, deuda y crédito con ejemplos reales del negocio diario. Menos teoría. Más aplicación.</p>
+            </article>
+            <article class="pillar">
+              <div class="pillar-icon">🧭</div>
+              <h3>Mentoría y acompañamiento</h3>
+              <p>Ayudamos a ordenar ventas, gastos, inventario, cobranzas y metas para que el emprendedor tenga control y no solo intuición.</p>
+            </article>
+            <article class="pillar">
+              <div class="pillar-icon">📊</div>
+              <h3>Herramientas para crecer</h3>
+              <p>Usamos rutas, formatos, indicadores y seguimiento para que el negocio construya evidencia, mejore su perfil y tome mejores decisiones.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="model" id="modelo">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="kicker">Nuestro modelo</span>
+              <h2>Educamos, medimos y acompañamos.</h2>
+            </div>
+            <p>
+              Nuestra metodología convierte información simple del negocio en decisiones útiles. La meta es que el emprendedor entienda su realidad financiera y pueda mejorarla.
+            </p>
+          </div>
+
+          <div class="steps">
+            <article class="step">
+              <h3>Diagnóstico</h3>
+              <p>Identificamos cómo vende, cómo cobra, cuánto gasta, cuánto debe y dónde se fuga la caja.</p>
+            </article>
+            <article class="step">
+              <h3>Educación</h3>
+              <p>Enseñamos conceptos clave con lenguaje simple: utilidad, flujo de caja, capital de trabajo y deuda sana.</p>
+            </article>
+            <article class="step">
+              <h3>Seguimiento</h3>
+              <p>Medimos hábitos financieros, avances, registros, cumplimiento y capacidad de pago con indicadores claros.</p>
+            </article>
+            <article class="step">
+              <h3>Oportunidades</h3>
+              <p>Preparamos al emprendedor para acceder a mejores condiciones, alianzas, mentoría y crecimiento responsable.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container impact-grid">
+          <div class="impact-main">
+            <span class="kicker">Impacto buscado</span>
+            <h2>Más negocios ordenados. Más familias con futuro.</h2>
+            <p>
+              Capital de Barrio trabaja para reducir la brecha entre el esfuerzo diario del emprendedor y las oportunidades que puede alcanzar cuando tiene educación financiera, información y acompañamiento.
+            </p>
+          </div>
+          <div class="impact-side">
+            <div class="metrics">
+              <div class="metric">
+                <strong>01</strong>
+                <span>Mejor control de caja y gastos.</span>
+              </div>
+              <div class="metric">
+                <strong>02</strong>
+                <span>Mayor claridad sobre margen y utilidad.</span>
+              </div>
+              <div class="metric">
+                <strong>03</strong>
+                <span>Mejor preparación para crédito responsable.</span>
+              </div>
+              <div class="metric">
+                <strong>04</strong>
+                <span>Más comunidad, mentoría y aprendizaje práctico.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="equipo">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="kicker">Equipo fundador</span>
+              <h2>Gente comprometida con el barrio.</h2>
+            </div>
+            <p>
+              Combinamos finanzas, gestión, comunidad y operación para construir una iniciativa útil, medible y cercana al emprendedor.
+            </p>
+          </div>
+
+          <div class="team">
+            <article class="member">
+              <div class="avatar">MC</div>
+              <h3>Mario Chávez</h3>
+              <span class="role">Tesorería y finanzas</span>
+              <p>Economista especializado en finanzas. Enfocado en educación financiera, control de caja, análisis de riesgo y sostenibilidad del modelo.</p>
+            </article>
+            <article class="member">
+              <div class="avatar">C</div>
+              <h3>Carlos</h3>
+              <span class="role">Presidencia y comunidad</span>
+              <p>Responsable de impulsar la visión institucional, conectar con emprendedores y fortalecer la presencia territorial del proyecto.</p>
+            </article>
+            <article class="member">
+              <div class="avatar">A</div>
+              <h3>Alexander</h3>
+              <span class="role">Secretaría y operación</span>
+              <p>Apoya la organización, registro, coordinación y seguimiento de las actividades para que el modelo funcione con orden.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="contacto">
+        <div class="container">
+          <div class="cta-box">
+            <div>
+              <h2>Del barrio al progreso empieza con una decisión.</h2>
+              <p>
+                Aprende a ordenar tu negocio, mejorar tus números y prepararte para nuevas oportunidades. Capital de Barrio te acompaña paso a paso.
+              </p>
+            </div>
+            <a class="btn btn-outline" href="index.html#empezar">Empieza gratis</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>© 2026 Capital de Barrio. Educación que abre crédito.</span>
+        <span>Del barrio al progreso.</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
